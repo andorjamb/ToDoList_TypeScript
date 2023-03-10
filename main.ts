@@ -18,8 +18,6 @@ function getAllFromStorage() {
 
 function convertSpaces(array: string[]) {
     array = array.map((element) => { return element.replace(' ', '_') })
-    console.log(array);
-    console.log(array.join(''));
     return array.join('');
 }
 

@@ -16,8 +16,6 @@ function getAllFromStorage() {
 }
 function convertSpaces(array) {
     array = array.map(function (element) { return element.replace(' ', '_'); });
-    console.log(array);
-    console.log(array.join(''));
     return array.join('');
 }
 function addItem(input) {
