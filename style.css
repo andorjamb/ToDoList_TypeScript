@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background-image: linear-gradient(0deg, rgb(127, 91, 210), rgb(75, 45, 185));
+    background-repeat: no-repeat;
+    background-position: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    text-align: center;
+    margin: 2rem;
+
+}
+
+main {
+    padding: 2rem;
+    min-height: 50vh;
+    width: 60vw;
+    margin: auto;
+    background-color: white;
+    border-radius: 40px;
+
+
+}
+
+h1 {
+    height: 6rem;
+    line-height: 6rem;
+    background-color: white;
+    color: rgb(75, 45, 185);
+}
+
+.page-title {
+    width: 60vw;
+    margin: auto;
+}
+
+h2,
+h3 {
+    color: darkblue;
+}
+
+input#item {
+    border: solid 2px darkblue;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    height: 40px;
+
+}
+
+button.add {
+    width: 40px;
+    height: 40px;
+    font-size: larger;
+
+}
+
+button {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-weight: bolder;
+    height: 40px;
+    width: 90px;
+    background-image: linear-gradient(rgb(117, 13, 109), rgb(165, 73, 218));
+    color: white;
+    border: solid 1px rgb(117, 13, 109);
+
+}
+
+ul {
+    padding-top: 2rem;
+}
+
+li {
+    padding: 0;
+}
+
+.list {
+    height: 40vh;
+    width: 60vw;
+    position: relative;
+}
+
+.checkbox {
+    display: inline;
+    margin-left: 2rem;
+
+}
+
+.checkbox.strike-through {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.strike-through {
+    color: gray;
+    text-decoration: line-through;
+}
