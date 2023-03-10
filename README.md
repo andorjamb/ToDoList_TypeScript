@@ -4,4 +4,4 @@ A simple web application written in TypeScript that utilizes localStorage to cre
 
 #### Screenshot
 
-![screenshot](https://github.com/andorjamb/react_speedgame/blob/master/screenshot_todo.png)
+![screenshot](https://github.com/andorjamb/ToDoList_TypeScript/blob/master/screenshot_todo.png)
