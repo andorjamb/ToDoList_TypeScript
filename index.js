@@ -1,33 +1,35 @@
 "use strict";
-let item = document.querySelector("#item");
-const form = document.querySelector("form");
-const ul = document.querySelector("ul");
-const reset = document.querySelector('#reset');
-let checkboxes;
+exports.__esModule = true;
+var replace_string_1 = require("replace-string");
+var item = document.querySelector("#item");
+var form = document.querySelector("form");
+var ul = document.querySelector("ul");
+var reset = document.querySelector('#reset');
+var checkboxes;
 function getAllFromStorage() {
     if (localStorage.length > 0) {
-        for (const i in localStorage) {
+        for (var i in localStorage) {
             if (localStorage.getItem(i) == 'true') {
                 localStorage.removeItem(i);
             }
         }
-        let toDoArray = Object.keys(localStorage);
-        toDoArray.forEach((item) => addItem(item));
+        var toDoArray = Object.keys(localStorage);
+        toDoArray.forEach(function (item) { return addItem(item); });
     }
 }
 function addItem(input) {
-    let newLi = document.createElement("li");
+    var newLi = document.createElement("li");
     ul.appendChild(newLi);
-    let newLabel = document.createElement("label");
-    newLabel.setAttribute("for", input.replaceAll(' ', '_'));
+    var newLabel = document.createElement("label");
+    newLabel.setAttribute("for", (0, replace_string_1["default"])(input, ' ', '_'));
     newLabel.textContent = input;
     newLi.appendChild(newLabel);
     /*  create checkbox */
-    let checkbox = document.createElement("input");
+    var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
     checkbox.setAttribute("name", "checklist");
-    checkbox.setAttribute("id", input.replaceAll(' ', '_'));
+    checkbox.setAttribute("id", (0, replace_string_1["default"])(input, ' ', '_'));
     checkbox.addEventListener('change', function () {
         changeClass(checkbox.parentNode);
         updateValue(input, (checkbox.checked).toString()); //if true or false
@@ -48,10 +50,10 @@ function changeClass(e) {
 function updateValue(input, value) {
     localStorage.setItem(input, value);
 }
-window.onload = () => {
+window.onload = function () {
     getAllFromStorage();
 };
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (item.value) {
         addItem(item.value);
@@ -59,7 +61,7 @@ form.addEventListener('submit', (e) => {
         item.value = "";
     }
 });
-reset.addEventListener('click', () => {
+reset.addEventListener('click', function () {
     resetList();
     return (console.log('local storage cleared.'));
 });

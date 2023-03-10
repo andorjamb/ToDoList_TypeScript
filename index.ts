@@ -1,6 +1,6 @@
 import replaceString from 'replace-string';
 
-let item = document.querySelector("#item");
+let item: HTMLInputElement = document.querySelector("#item")!;
 const form = document.querySelector("form");
 const ul = document.querySelector("ul");
 const reset = document.querySelector('#reset');
@@ -50,7 +50,7 @@ function resetList() {
     ul!.innerHTML = '';
 }
 
-function changeClass(e) {
+function changeClass(e: any) {
     e.parentNode.classList.toggle('strike-through')
 }
 
