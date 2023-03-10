@@ -14,18 +14,26 @@ function getAllFromStorage() {
         toDoArray.forEach(function (item) { return addItem(item); });
     }
 }
+function convertSpaces(array) {
+    array = array.map(function (element) { return element.replace(' ', '_'); });
+    console.log(array);
+    console.log(array.join(''));
+    return array.join('');
+}
 function addItem(input) {
     var newLi = document.createElement("li");
     ul.appendChild(newLi);
     var newLabel = document.createElement("label");
-    newLabel.setAttribute("for", replaceString(input, ' ', '_'));
+    var newNameArray = input.split('');
+    var newName = convertSpaces(newNameArray);
+    newLabel.setAttribute("for", newName);
     newLabel.textContent = input;
     newLi.appendChild(newLabel);
     var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
     checkbox.setAttribute("name", "checklist");
-    checkbox.setAttribute("id", replaceString(input, ' ', '_'));
+    checkbox.setAttribute("id", newName);
     checkbox.addEventListener('change', function () {
         changeClass(checkbox.parentNode);
         updateValue(input, (checkbox.checked).toString());
