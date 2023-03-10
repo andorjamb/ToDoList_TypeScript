@@ -1,6 +1,4 @@
-import replaceString from 'replace-string';
-
-let item: HTMLInputElement = document.querySelector("#item")!;
+const item: HTMLInputElement = document.querySelector("#item")!;
 const form = document.querySelector("form");
 const ul = document.querySelector("ul");
 const reset = document.querySelector('#reset');
@@ -18,6 +16,7 @@ function getAllFromStorage() {
     }
 }
 
+
 function addItem(input: string) {
     let newLi = document.createElement("li");
     ul!.appendChild(newLi);
@@ -26,7 +25,6 @@ function addItem(input: string) {
     newLabel.textContent = input;
     newLi.appendChild(newLabel);
 
-    /*  create checkbox */
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
@@ -34,7 +32,7 @@ function addItem(input: string) {
     checkbox.setAttribute("id", replaceString(input, ' ', '_'));
     checkbox.addEventListener('change', function () {
         changeClass(checkbox.parentNode);
-        updateValue(input, (checkbox.checked).toString());//if true or false
+        updateValue(input, (checkbox.checked).toString());
     })
 
     newLabel.insertAdjacentElement('beforeend', checkbox);

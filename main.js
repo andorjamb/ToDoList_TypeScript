@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-var replace_string_1 = require("replace-string");
 var item = document.querySelector("#item");
 var form = document.querySelector("form");
 var ul = document.querySelector("ul");
@@ -21,18 +18,17 @@ function addItem(input) {
     var newLi = document.createElement("li");
     ul.appendChild(newLi);
     var newLabel = document.createElement("label");
-    newLabel.setAttribute("for", (0, replace_string_1["default"])(input, ' ', '_'));
+    newLabel.setAttribute("for", replaceString(input, ' ', '_'));
     newLabel.textContent = input;
     newLi.appendChild(newLabel);
-    /*  create checkbox */
     var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
     checkbox.setAttribute("name", "checklist");
-    checkbox.setAttribute("id", (0, replace_string_1["default"])(input, ' ', '_'));
+    checkbox.setAttribute("id", replaceString(input, ' ', '_'));
     checkbox.addEventListener('change', function () {
         changeClass(checkbox.parentNode);
-        updateValue(input, (checkbox.checked).toString()); //if true or false
+        updateValue(input, (checkbox.checked).toString());
     });
     newLabel.insertAdjacentElement('beforeend', checkbox);
     return checkboxes = document.querySelectorAll('.checkbox');
